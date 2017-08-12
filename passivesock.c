@@ -58,7 +58,7 @@ int passivesock(const char* service, const char* transport, int qlen)
         errexit("can't create socket: %s\n", strerror(errno));
 
     //  Привязываем сокет
-    if ( bind( s, (struct sock_addr *) &sin, sizeof(sin) ) < 0 )
+    if ( bind( s, (struct sockaddr *) &sin, sizeof(sin) ) < 0 )
 
         errexit("can't bind to %s port: %s\n", service, strerror(errno));
 

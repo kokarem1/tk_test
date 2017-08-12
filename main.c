@@ -52,6 +52,9 @@ int main(int argc, char *argv[])
 
     msock = passiveTCP(service, QLEN);
 
+    printf("service:       %s\nbegin symbol:  '%c'\nend symbol:    '%c'\n",
+           service, bsymb, esymb);
+
     signal(SIGCHLD, reaper);
 
     while (1) {

@@ -68,3 +68,13 @@ int passivesock(const char* service, const char* transport, int qlen)
 
     return s;
 }
+
+int passiveUDP(const char *service)
+{
+    return passivesock(service, "udp", 0);
+}
+
+int passiveTCP(const char *service, int qlen)
+{
+    return passivesock(service, "tcp", qlen);
+}
